@@ -19,6 +19,7 @@ int n, W;
 int w[MAX_N], v[MAX_N];
 int dp[MAX_N][MAX_N];
 
+// i番目以降の品物から重さの総和がj以下になるように選ぶ
 int rec(int i, int j)
 {
     if (dp[i][j] >= 0)
@@ -30,11 +31,11 @@ int rec(int i, int j)
     {
         res = 0;
     }
-    else if (j < w[i])
+    else if (j < w[i]) // i番目の品物の重さがjより大きいのでこれを選ばない
     {
         res = rec(i + 1, j);
     }
-    else
+    else // i番目の品物の重さがj以下なのでこれを選ばない,選ぶケースを両方試す
     {
         res = max(rec(i + 1, j), rec(i + 1, j - w[i]) + v[i]);
     }
