@@ -42,7 +42,7 @@ int main()
             }
         }
     }
-    cout << dp[n & 1][W];
+    cout << dp[n & 1][W] << endl;
     return 0;
 }
 //m mod 2^nは m&(2~n-1) により求まる!

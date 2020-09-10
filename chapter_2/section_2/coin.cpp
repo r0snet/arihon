@@ -35,6 +35,6 @@ int main()
         A -= t * v[i];
         ans += t;
     }
-    cout << ans;
+    cout << ans << endl;
     return 0;
 }

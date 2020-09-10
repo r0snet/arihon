@@ -18,10 +18,12 @@ static const int MAX_N = 101;
 int n, W;
 int w[MAX_N], v[MAX_N];
 int dp[MAX_N][MAX_N];
+// dp[i][j]はi番目以降の品物から
+//重さの総和がj以下になるように選んだ時の価値の総和の最大値
 
-// i番目以降の品物から重さの総和がj以下になるように選ぶ
 int rec(int i, int j)
 {
+    //一度計算した値は再利用するようにメモ化
     if (dp[i][j] >= 0)
     {
         return dp[i][j];
@@ -31,11 +33,13 @@ int rec(int i, int j)
     {
         res = 0;
     }
-    else if (j < w[i]) // i番目の品物の重さがjより大きいのでこれを選ばない
+    else if (j < w[i]) 
+    // i番目の品物の重さがjより大きいのでこれを選ばない
     {
         res = rec(i + 1, j);
     }
-    else // i番目の品物の重さがj以下なのでこれを選ばない,選ぶケースを両方試す
+    else 
+    // i番目の品物の重さがj以下なのでこれを選ばない,選ぶケースを両方試す
     {
         res = max(rec(i + 1, j), rec(i + 1, j - w[i]) + v[i]);
     }
@@ -49,7 +53,9 @@ int main()
     {
         cin >> w[i] >> v[i];
     }
-    memset(dp, -1, sizeof(dp));
-    cout << rec(0, W);
+    //まだ調べていないことを示す-1でdpを初期化
+    memset(dp, -1, sizeof(dp)); 
+    cout << rec(0, W) << endl;
     return 0;
 }
+//計算量O(nW)
