@@ -119,7 +119,7 @@ ll solve(ll *l, ll n)
         Q;
     //こうするとtopが最小要素になるっぽい
     ll ans = 0;
-    for (ll i = 0; i < n; i++)
+    rep(i, n)
     {
         Q.push(l[i]);
     }
@@ -139,10 +139,7 @@ ll solve(ll *l, ll n)
 int main()
 {
     cin >> n;
-    for (ll i = 0; i < n; i++)
-    {
-        cin >> l[i];
-    }
+    rep(i, n) cin >> l[i];
     cout << solve(l, n) << "\n";
     return 0;
 }

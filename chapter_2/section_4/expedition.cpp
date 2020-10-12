@@ -116,7 +116,7 @@ int solve(int *a, int *b, int n, int l, int p)
     priority_queue<int> Q;
     int ans = 0, pos = 0, tank = p;
     // ans:補給回数, pos:現在位置, tank:タンクのガソリンの量
-    for (int i = 0; i < n; i++)
+    rep(i, n)
     {
         // トラックをa[i+1]-a[i]ずつ前進させる.
         //ガソリンが切れるまでb[i]たちをQに入れていきタンクが空になったら
@@ -142,14 +142,8 @@ int solve(int *a, int *b, int n, int l, int p)
 int main()
 {
     cin >> n >> l >> p;
-    for (int i = 0; i < n; i++)
-    {
-        cin >> a[i];
-    }
-    for (int i = 0; i < n; i++)
-    {
-        cin >> b[i];
-    }
+    rep(i, n) cin >> a[i];
+    rep(i, n) cin >> b[i];
     cout << solve(a, b, n, l, p) << "\n";
     return 0;
 }

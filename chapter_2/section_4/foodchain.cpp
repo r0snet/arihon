@@ -107,8 +107,6 @@ constexpr int INF = 1001001001;
     else { puts("No"); }
 constexpr int MAX = 1000001;
 
-
-
 int n, k;
 int t[MAX], x[MAX], y[MAX];
 int par[MAX], rank[MAX]; //親,帰の深さ
@@ -164,7 +162,7 @@ int solve(int *t, int *x, int *y, int n, int k)
     init(3 * n);
     int ans = 0;
 
-    for (int i = 0; i < k; i++)
+    rep(i, k)
     {
         int T = t[i];
         int X = x[i] - 1, Y = y[i] - 1;
@@ -207,9 +205,6 @@ int solve(int *t, int *x, int *y, int n, int k)
 int main()
 {
     cin >> n >> k;
-    for (int i = 0; i < k; i++)
-    {
-        cin >> t[i] >> x[i] >> y[i];
-    }
+    rep(i, k) cin >> t[i] >> x[i] >> y[i];
     cout << solve(t, x, y, n, k) << "\n";
 }
