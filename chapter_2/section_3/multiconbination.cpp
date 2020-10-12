@@ -36,7 +36,7 @@ int main()
         {
             if (j > a[i])
             {
-                dp[i + 1][j] = dp[i + 1][j - 1] + dp[i][j] - dp[i][j - a[i] - 1] % M;
+                dp[i + 1][j] = (dp[i + 1][j - 1] + dp[i][j] - dp[i][j - a[i] - 1] + M) % M;
             }
             else
             {
