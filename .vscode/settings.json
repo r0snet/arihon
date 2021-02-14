@@ -1,6 +1,12 @@
 {
     "C_Cpp.errorSquiggles": "Disabled",
     "files.associations": {
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "ostream": "cpp",
+        "tuple": "cpp",
+        "cstdlib": "cpp",
+        "iosfwd": "cpp"
     }
 }
