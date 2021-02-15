@@ -81,9 +81,9 @@ int main()
     ll n = 1 << m;
     vd prb(n + 1);
     prb[n] = 1.0;
+    vd tmp(n + 1);
     rep(_, m)
     {
-        vd tmp(n + 1);
         rep0(i, n)
         {
             ll range = min(i, n - i);
