@@ -80,7 +80,7 @@ int main()
     cin >> m >> p >> x;
     ll n = 1 << m;
     vd prb(n + 1);
-    prb[n] = 1.0; // 既に100万円持っていれば確率1
+    prb[n] = 1.0;
     rep(_, m)
     {
         vd tmp(n + 1);
